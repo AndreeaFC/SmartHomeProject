@@ -1,0 +1,6 @@
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\bin\Debug\SmartHome_ConsoleApp.exe.config
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\bin\Debug\SmartHome_ConsoleApp.exe
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\bin\Debug\SmartHome_ConsoleApp.pdb
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\obj\Debug\SmartHome_ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\obj\Debug\SmartHome_ConsoleApp.exe
+C:\Users\AndreeaFlorina\Documents\Visual Studio 2015\Projects\SmartHome\SmartHome_ConsoleApp\obj\Debug\SmartHome_ConsoleApp.pdb
