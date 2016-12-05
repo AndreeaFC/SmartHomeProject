@@ -14,7 +14,7 @@ namespace SmartHome.Controllers
 {
     public class HouseAreasAPIController : ApiController
     {
-        private SmartHomeEntities db = new SmartHomeEntities();
+        private SmartHomeEntities2 db = new SmartHomeEntities2();
 
         // GET: api/HouseAreasAPI
         public IQueryable<HouseArea> GetHouseAreas()
