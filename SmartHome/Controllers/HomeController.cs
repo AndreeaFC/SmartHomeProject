@@ -26,5 +26,12 @@ namespace SmartHome.Controllers
 
             return View();
         }
+
+        public ActionResult HouseAreas()
+        {
+            ViewBag.Message = "House Area page.";
+
+            return View();
+        }
     }
 }

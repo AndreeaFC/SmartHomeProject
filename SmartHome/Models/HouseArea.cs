@@ -19,5 +19,6 @@ namespace SmartHome.Models
         public Nullable<bool> LightsOn { get; set; }
         public Nullable<double> AreaHeating { get; set; }
         public Nullable<bool> FloorHeating { get; set; }
+        public Nullable<bool> Alarm { get; set; }
     }
 }

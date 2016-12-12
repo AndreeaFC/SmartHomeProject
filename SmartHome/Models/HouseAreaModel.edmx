@@ -14,6 +14,7 @@
           <Property Name="LightsOn" Type="bit" />
           <Property Name="AreaHeating" Type="float" />
           <Property Name="FloorHeating" Type="bit" />
+          <Property Name="Alarm" Type="bit" />
         </EntityType>
         <EntityContainer Name="SmartHomeModelStoreContainer">
           <EntitySet Name="HouseArea" EntityType="Self.HouseArea" Schema="dbo" store:Type="Tables" />
@@ -32,8 +33,9 @@
           <Property Name="LightsOn" Type="Boolean" />
           <Property Name="AreaHeating" Type="Double" />
           <Property Name="FloorHeating" Type="Boolean" />
+          <Property Name="Alarm" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="SmartHomeEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SmartHomeEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="HouseAreas" EntityType="Self.HouseArea" />
         </EntityContainer>
       </Schema>
@@ -41,7 +43,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SmartHomeModelStoreContainer" CdmEntityContainer="SmartHomeEntities2">
+        <EntityContainerMapping StorageEntityContainer="SmartHomeModelStoreContainer" CdmEntityContainer="SmartHomeEntities3">
           <EntitySetMapping Name="HouseAreas">
             <EntityTypeMapping TypeName="SmartHomeModel.HouseArea">
               <MappingFragment StoreEntitySet="HouseArea">
@@ -50,6 +52,7 @@
                 <ScalarProperty Name="LightsOn" ColumnName="LightsOn" />
                 <ScalarProperty Name="AreaHeating" ColumnName="AreaHeating" />
                 <ScalarProperty Name="FloorHeating" ColumnName="FloorHeating" />
+                <ScalarProperty Name="Alarm" ColumnName="Alarm" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -9,6 +9,7 @@
     <Property Name="LightsOn" Type="bit" />
     <Property Name="AreaHeating" Type="float" />
     <Property Name="FloorHeating" Type="bit" />
+    <Property Name="Alarm" Type="bit" />
   </EntityType>
   <EntityContainer Name="SmartHomeModelStoreContainer">
     <EntitySet Name="HouseArea" EntityType="Self.HouseArea" Schema="dbo" store:Type="Tables" />

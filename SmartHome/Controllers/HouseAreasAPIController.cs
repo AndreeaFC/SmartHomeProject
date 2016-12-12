@@ -6,15 +6,17 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SmartHome.Models;
+using System.Data.SqlClient;
 
 namespace SmartHome.Controllers
 {
     public class HouseAreasAPIController : ApiController
     {
-        private SmartHomeEntities2 db = new SmartHomeEntities2();
+        private SmartHomeEntities3 db = new SmartHomeEntities3();
 
         // GET: api/HouseAreasAPI
         public IQueryable<HouseArea> GetHouseAreas()
@@ -22,11 +24,32 @@ namespace SmartHome.Controllers
             return db.HouseAreas;
         }
 
+        public IQueryable<HouseArea> GetHouseAreasId(int id)
+        {
+            List<HouseArea> houseAreas = new List<HouseArea>();
+            var con = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SmartHome;Integrated Security=True;";
+            using (SqlConnection myConnection = new SqlConnection(con))
+            {
+                string oString = "SELECT * FROM HouseArea"; //SELECT Id FROM HouseArea
+                SqlCommand myCommand = new SqlCommand(oString, myConnection);
+
+                myConnection.Open();
+                using (SqlDataReader oReader = myCommand.ExecuteReader())
+                {
+                    while (oReader.Read())
+                    {
+                        houseAreas.Add(new HouseArea { Id = Convert.ToInt16(oReader["Id"]), Name = oReader["Name"].ToString() });
+                    }
+                    myConnection.Close();
+                }
+            }
+            return houseAreas.AsQueryable();
+        }
         // GET: api/HouseAreasAPI/5
         [ResponseType(typeof(HouseArea))]
-        public IHttpActionResult GetHouseArea(int id)
+        public async Task<IHttpActionResult> GetHouseArea(int id)
         {
-            HouseArea houseArea = db.HouseAreas.Find(id);
+            HouseArea houseArea = await db.HouseAreas.FindAsync(id);
             if (houseArea == null)
             {
                 return NotFound();
@@ -37,7 +60,7 @@ namespace SmartHome.Controllers
 
         // PUT: api/HouseAreasAPI/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutHouseArea(int id, HouseArea houseArea)
+        public async Task<IHttpActionResult> PutHouseArea(int id, HouseArea houseArea)
         {
             if (!ModelState.IsValid)
             {
@@ -53,7 +76,7 @@ namespace SmartHome.Controllers
 
             try
             {
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -72,7 +95,7 @@ namespace SmartHome.Controllers
 
         // POST: api/HouseAreasAPI
         [ResponseType(typeof(HouseArea))]
-        public IHttpActionResult PostHouseArea(HouseArea houseArea)
+        public async Task<IHttpActionResult> PostHouseArea(HouseArea houseArea)
         {
             if (!ModelState.IsValid)
             {
@@ -80,23 +103,23 @@ namespace SmartHome.Controllers
             }
 
             db.HouseAreas.Add(houseArea);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = houseArea.Id }, houseArea);
         }
 
         // DELETE: api/HouseAreasAPI/5
         [ResponseType(typeof(HouseArea))]
-        public IHttpActionResult DeleteHouseArea(int id)
+        public async Task<IHttpActionResult> DeleteHouseArea(int id)
         {
-            HouseArea houseArea = db.HouseAreas.Find(id);
+            HouseArea houseArea = await db.HouseAreas.FindAsync(id);
             if (houseArea == null)
             {
                 return NotFound();
             }
 
             db.HouseAreas.Remove(houseArea);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
 
             return Ok(houseArea);
         }

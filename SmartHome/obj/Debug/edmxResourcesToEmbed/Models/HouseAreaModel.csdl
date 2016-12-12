@@ -9,8 +9,9 @@
     <Property Name="LightsOn" Type="Boolean" />
     <Property Name="AreaHeating" Type="Double" />
     <Property Name="FloorHeating" Type="Boolean" />
+    <Property Name="Alarm" Type="Boolean" />
   </EntityType>
-  <EntityContainer Name="SmartHomeEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SmartHomeEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="HouseAreas" EntityType="Self.HouseArea" />
   </EntityContainer>
 </Schema>

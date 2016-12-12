@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SmartHomeModelStoreContainer" CdmEntityContainer="SmartHomeEntities2">
+  <EntityContainerMapping StorageEntityContainer="SmartHomeModelStoreContainer" CdmEntityContainer="SmartHomeEntities3">
     <EntitySetMapping Name="HouseAreas">
       <EntityTypeMapping TypeName="SmartHomeModel.HouseArea">
         <MappingFragment StoreEntitySet="HouseArea">
@@ -9,6 +9,7 @@
           <ScalarProperty Name="LightsOn" ColumnName="LightsOn" />
           <ScalarProperty Name="AreaHeating" ColumnName="AreaHeating" />
           <ScalarProperty Name="FloorHeating" ColumnName="FloorHeating" />
+          <ScalarProperty Name="Alarm" ColumnName="Alarm" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

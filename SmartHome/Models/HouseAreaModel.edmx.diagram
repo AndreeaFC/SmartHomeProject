@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3df11e5d130b450c8cd97c4f877d420c" Name="Diagram1">
+      <Diagram DiagramId="4ed19788165844d7bcc13fcf5b4aadd2" Name="Diagram1">
         <EntityTypeShape EntityType="SmartHomeModel.HouseArea" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

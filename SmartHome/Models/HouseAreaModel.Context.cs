@@ -13,10 +13,10 @@ namespace SmartHome.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SmartHomeEntities2 : DbContext
+    public partial class SmartHomeEntities3 : DbContext
     {
-        public SmartHomeEntities2()
-            : base("name=SmartHomeEntities2")
+        public SmartHomeEntities3()
+            : base("name=SmartHomeEntities3")
         {
         }
     
